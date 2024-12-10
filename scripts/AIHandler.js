@@ -1,6 +1,6 @@
 const OpenAI = require('openai');
 const axios = require("axios");
-const aiSettings = require('../../config/ai-settings.json');
+const aiSettings = require('../config/ai-settings.json');
 
 const openai = new OpenAI({
     apiKey: aiSettings.apiKey,
