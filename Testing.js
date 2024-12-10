@@ -1,5 +1,5 @@
 const readline = require('readline');
-const exec = require('child_process').exec;
+const { exec } = require('child_process');
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -8,13 +8,16 @@ const rl = readline.createInterface({
 
 const startHubot = (script) => {
   console.log(`Starting Hubot with ${script}...`);
-  exec(`hubot --adapter shell`, (error, stdout, stderr) => {
+
+  exec(`npx hubot --adapter shell`, (error, stdout, stderr) => {
     if (error) {
-      console.error(`Error: ${error.message}`);
+      console.error(`Error starting Hubot: ${error.message}`);
       return;
     }
+    if (stderr) {
+      console.error(`Stderr: ${stderr}`);
+    }
     console.log(stdout);
-    console.error(stderr);
   });
 };
 
