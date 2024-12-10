@@ -1,5 +1,5 @@
-const Logger = require('./scripts/Logger');
-const logger = new Logger();
+//const Logger = require('./scripts/Logger');
+//const logger = new Logger();
 
 // Register CoffeeScript to handle .coffee files
 require('coffeescript/register');
