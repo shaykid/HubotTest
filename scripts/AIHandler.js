@@ -7,7 +7,7 @@ const openai = new OpenAI({
     baseURL: aiSettings.baseURL,
     model: aiSettings.model
 });
-});
+
 
 class AIHandler {
     async analyzeImage(context) {
