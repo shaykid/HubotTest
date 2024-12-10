@@ -34,15 +34,15 @@ const selectRepresentative = () => {
   rl.question('Enter the number of your choice: ', (answer) => {
     switch (answer) {
       case '1':
-        process.env.HUBOT_SCRIPTS = 'scripts/male-hispanic-rep.js';
+        process.env.HUBOT_SCRIPTS = './scripts/male-hispanic-rep.js';
         startHubot('Carlos');
         break;
       case '2':
-        process.env.HUBOT_SCRIPTS = 'scripts/female-swedish-rep.js';
+        process.env.HUBOT_SCRIPTS = './scripts/female-swedish-rep.js';
         startHubot('Ingrid');
         break;
       case '3':
-        process.env.HUBOT_SCRIPTS = 'scripts/indiana-jones-rep.js';
+        process.env.HUBOT_SCRIPTS = './scripts/indiana-jones-rep.js';
         startHubot('Indy');
         break;
       default:
