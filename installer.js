@@ -1,3 +1,4 @@
+robot.loadFile('./scripts/AIHandler.js');
 // Register CoffeeScript to handle .coffee files
 require('coffeescript/register');
 
