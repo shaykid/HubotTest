@@ -1,0 +1,7 @@
+{
+  "apiKey": "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",
+  "baseURL": "https://api.openai.com/v1",
+  "model": "gpt-3.5-turbo",
+  "outputFile": "names_output.json",
+  "promptTemplate": "A customer {id} asks: {question}. Please supply a clarification question to them, hinting at the options in less than 63 words."
+}
