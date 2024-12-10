@@ -26,7 +26,7 @@ async function sendPrompt(prompt) {
 }
 
 async function testAI() {
-  const prompt = "What is the weather in Holland now?";
+  const prompt = "What is the weight of the moon ?, please replay in up to 40 words answer";
   console.log(`Sending prompt: "${prompt}"\n`);
 
   try {
