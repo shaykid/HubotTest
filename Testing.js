@@ -1,9 +1,13 @@
+
 require('shell');
 require('coffeescript/register');
 require('./node_modules/hubot/bin/hubot');
 
 const readline = require('readline');
 const { exec } = require('child_process');
+
+const Logger = require('./Logger');
+const logger = new Logger();
 
 const rl = readline.createInterface({
   input: process.stdin,
