@@ -1,26 +1,22 @@
-const axios = require('axios');
+const { Configuration, OpenAIApi } = require('openai');
 const fs = require('fs');
 
 // Load AI settings from ai-settings.json
 const aiSettings = JSON.parse(fs.readFileSync('./config/ai-settings.json', 'utf-8'));
 
-// Function to send prompt to OpenAI API
+// Initialize OpenAI API client
+const configuration = new Configuration({
+  apiKey: aiSettings.apiKey,
+});
+const openai = new OpenAIApi(configuration);
+
+// Function to send a prompt
 async function sendPrompt(prompt) {
   try {
-    const response = await axios.post(
-      `${aiSettings.baseURL}/chat/completions`,
-      {
-        model: aiSettings.model,
-        messages: [{ role: 'user', content: prompt }],
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${aiSettings.apiKey}`,
-        },
-      }
-    );
-
+    const response = await openai.createChatCompletion({
+      model: aiSettings.model,
+      messages: [{ role: 'user', content: prompt }],
+    });
     return response.data.choices[0].message.content;
   } catch (error) {
     throw new Error(`Error: ${error.response ? error.response.data.error.message : error.message}`);
