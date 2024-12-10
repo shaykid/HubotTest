@@ -1,3 +1,6 @@
+require('coffeescript/register');
+require('./node_modules/hubot/bin/hubot');
+
 const readline = require('readline');
 const { exec } = require('child_process');
 
