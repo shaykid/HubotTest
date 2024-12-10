@@ -1,7 +1,7 @@
 {
   "apiKey": "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",
   "baseURL": "https://integrate.api.nvidia.com/v1",
-  "model": "gpt-3.5-turbo",
+  "model": "meta/llama-3.3-70b-instruct",
   "outputFile": "names_output.json",
   "promptTemplate": "A customer {id} asks: {question}. Please supply a clarification question to them, hinting at the options in less than 63 words."
 }
