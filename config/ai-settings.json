@@ -1,6 +1,6 @@
 {
-  "apiKey": "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",
-  "baseURL": "https://api.openai.com/v1",
+  "apiKey": "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",
+  "baseURL": "https://integrate.api.nvidia.com/v1",
   "model": "gpt-3.5-turbo",
   "outputFile": "names_output.json",
   "promptTemplate": "A customer {id} asks: {question}. Please supply a clarification question to them, hinting at the options in less than 63 words."
