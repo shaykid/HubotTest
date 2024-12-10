@@ -1,5 +1,5 @@
 {
-  "apiKey": "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",
+  "apiKey": "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",
   "baseURL": "https://api.openai.com/v1",
   "model": "gpt-3.5-turbo",
   "outputFile": "names_output.json",
