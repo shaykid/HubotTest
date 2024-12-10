@@ -9,6 +9,7 @@
   "dependencies": {
     "hubot": "^10.8.2",
     "hubot-scripts": "^2.19.0",
+    "hubot-shell-adapter":"^1.0.0",
     "coffeescript": "^2.7.0",
     "moment-timezone": "^0.5.40"
   },
