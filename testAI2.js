@@ -1,29 +1,28 @@
-const { Configuration, OpenAIApi } = require('openai');
 const fs = require('fs');
+const OpenAI = require('openai');
 
 // Load AI settings from ai-settings.json
 const aiSettings = JSON.parse(fs.readFileSync('./config/ai-settings.json', 'utf-8'));
 
-// Initialize OpenAI API client
-const configuration = new Configuration({
+// Initialize OpenAI client
+const openai = new OpenAI({
   apiKey: aiSettings.apiKey,
 });
-const openai = new OpenAIApi(configuration);
 
-// Function to send a prompt
 async function sendPrompt(prompt) {
   try {
-    const response = await openai.createChatCompletion({
+    // Send a prompt to OpenAI Chat Completions API
+    const response = await openai.chat.completions.create({
       model: aiSettings.model,
-      messages: [{ role: 'user', content: prompt }],
+      messages: [{ role: "user", content: prompt }],
     });
-    return response.data.choices[0].message.content;
+
+    return response.choices[0].message.content;
   } catch (error) {
-    throw new Error(`Error: ${error.response ? error.response.data.error.message : error.message}`);
+    throw new Error(`Error: ${error.message}`);
   }
 }
 
-// Main function to test the AI prompt
 async function testAI() {
   const prompt = "What is the weather in Holland now?";
   console.log(`Sending prompt: "${prompt}"\n`);
@@ -36,5 +35,4 @@ async function testAI() {
   }
 }
 
-// Run the test
 testAI();
