@@ -7,6 +7,7 @@ const aiSettings = JSON.parse(fs.readFileSync('./config/ai-settings.json', 'utf-
 // Initialize OpenAI client
 const openai = new OpenAI({
   apiKey: aiSettings.apiKey,
+  baseURL: aiSettings.baseURL
 });
 
 async function sendPrompt(prompt) {
