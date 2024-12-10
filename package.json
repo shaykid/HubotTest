@@ -1,3 +1,21 @@
 {
+  "name": "hubot-test",
+  "version": "1.0.0",
+  "description": "A test Hubot instance for handling scripts and automation",
+  "main": "installer.js",
+  "scripts": {
+    "start": "hubot"
+  },
+  "dependencies": {
+    "hubot": "^10.8.2",
+    "hubot-scripts": "^2.19.0",
+    "coffeescript": "^2.7.0",
+    "moment-timezone": "^0.5.40"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "author": "Your Name",
+  "license": "MIT",
   "type": "commonjs"
 }
